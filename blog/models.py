@@ -21,3 +21,9 @@ class Post(models.Model):
     )
     content = models.TextField()
     status =models.CharField(max_length=10, choices=options, default='draft')
+
+    class Meta:
+        ordering = ('-publish',)
+
+    def __str__(self):
+        return f"{self.title}"
