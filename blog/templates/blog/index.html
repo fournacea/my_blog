@@ -1,1 +1,23 @@
-This works?
+{% extends 'blog/base.html' %}
+
+{% block title %}My Blog{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-8">
+            
+            {% for post in posts %}
+
+                {{ post}}
+                {{ post.author|linebreaks  }}
+
+            {% endfor %}
+            
+
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+    
